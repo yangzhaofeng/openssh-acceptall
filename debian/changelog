@@ -1,3 +1,10 @@
+openssh (1:8.4p1-5+deb11u1) UNRELEASED; urgency=medium
+
+  * Backport from upstream:
+    - Add new pselect6_time64 syscall on ARM (closes: #1004427).
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 25 Feb 2022 16:09:00 +0000
+
 openssh (1:8.4p1-5) unstable; urgency=high
 
   * CVE-2021-28041: Fix double free in ssh-agent(1) (closes: #984940).
