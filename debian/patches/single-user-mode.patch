@@ -1,0 +1,25 @@
+Only use this patch if single user mode is needed.
+All connections will login as the user that runs sshd.
+
+sshd_config:
+AuthenticationMethods none
+PermitEmptyPasswords yes
+
+Patch-Name: single-user-mode.patch
+---
+ auth.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/auth.c b/auth.c
+index 4152d9c44..02185dc22 100644
+--- a/auth.c
++++ b/auth.c
+@@ -580,7 +580,7 @@ getpwnamallow(struct ssh *ssh, const char *user)
+        aix_setauthdb(user);
+ #endif
+ 
+-       pw = getpwnam(user);
++       pw = getpwuid(getuid());
+ 
+ #if defined(_AIX) && defined(HAVE_SETAUTHDB)
+        aix_restoreauthdb();

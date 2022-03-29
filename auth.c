@@ -580,7 +580,7 @@ getpwnamallow(struct ssh *ssh, const char *user)
 	aix_setauthdb(user);
 #endif
 
-	pw = getpwnam(user);
+	pw = getpwuid(getuid());
 
 #if defined(_AIX) && defined(HAVE_SETAUTHDB)
 	aix_restoreauthdb();
