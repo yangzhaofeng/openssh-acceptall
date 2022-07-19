@@ -1,3 +1,9 @@
+openssh (1:8.4p1-5+deb11u1-all11u1) bullseye; urgency=medium
+
+  * Merge from upstream deb11u1
+
+ -- Zhaofeng Yang <yangzhaofeng@arcas-da.com>  Tue, 19 Jul 2022 17:59:22 +0800
+
 openssh (1:8.4p1-5+deb11u1) bullseye; urgency=medium
 
   * Backport from upstream:
